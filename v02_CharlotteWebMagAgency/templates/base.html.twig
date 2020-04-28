@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Web Mag Agency - {% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+
+    </head>
+    <body>
+        <!-- header -->
+  <div class="row">
+    <!-- header 1 Recherche et Connexion-->
+    <div class="container-fluid col-lg-12 d-none d-lg-block" style="background-color: #333333;">
+      <form class="form-inline my-2 my-lg-0 d-flex justify-content-end">
+        <input class="form-control mr-sm-2 align-self-center input_search" type="search" placeholder=""
+          aria-label="Search">
+        <button class="btn btn-outline-info my-2 my-sm-0 align-self-center search_button"
+          type="submit">Rechercher</button>
+          {% if is_granted('ROLE_USER') %}
+          <a class="btn btn-info justify-content-end connexion_button my-1 ml-1" href="{{ path('app_logout') }}" type="submit">Se Déconnecter</a>
+          {% else %}
+          <a class="btn btn-secondary justify-content-end connexion_button my-1 ml-1 mr-1" href="{{ path('app_login') }}" type="submit">Se Connecter</a>
+          <a class="btn btn-info justify-content-end connexion_button my-1 ml-0 mr-1" href="{{ path('app_register') }}" type="submit">S'inscrire</a>
+          {% endif %}
+    
+      </form>
+    </div>
+
+  </div>
+  <header>
+
+    <!-- UNE NAVBAR HORIZONTAL QUI DEVIENT VERTIVAL SUR PETIT ECRAN -->
+    <div class="row">
+      <div class="col-lg-12 pr-0 sticky-top">
+        <nav class="navbar navbar-expand-lg px-2" id="cust-nav">
+
+          <!-- IMAGE LOGO-->
+          <a class="navbar-brand ml-3" href="{{ path('accueil') }}">
+            <img src="{{ asset('assets/images/logo-4.png') }}" alt="Logo" style="width:150px;">
+          </a>
+
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="btn-toggler-icon"></span>
+            <span class="btn-toggler-icon"></span>
+            <span class="btn-toggler-icon"></span>
+          </button>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+
+              <!-- Dropdown Nos prestations-->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-3" id="navbardrop" data-toggle="dropdown">
+                  Nos prestations
+                </a>
+                <div class="dropdown-menu cost-drop">
+                  <a class="dropdown-item" href="construction.html">Agence Web</a>
+                  <a class="dropdown-item" href="construction.html">Création de site</a>
+                  <a class="dropdown-item" href="construction.html">Référencement</a>
+                  <a class="dropdown-item" href="construction.html">Webmastering & maintenance</a>
+                  <a class="dropdown-item" href="construction.html">Nos références</a>
+                  <a class="dropdown-item" href="construction.html">Votre digitalisation</a>
+                  <a class="dropdown-item" href="construction.html">Espace de Co-working</a>
+                </div>
+              </li>
+              <!-- Dropdown Nos formations-->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-3" href="#" data-toggle="dropdown">
+                  Nos formations
+                </a>
+                <div class="dropdown-menu cost-drop">
+                  <a class="dropdown-item" href="construction.html">Vous êtes un professionnel</a>
+                  <a class="dropdown-item" href="construction.html">Vous êtes un particulier</a>
+                </div>
+              </li>
+              <!-- Dropdown recrutements-->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-3" data-toggle="dropdown">
+                  Recrutements
+                </a>
+                <div class="dropdown-menu cost-drop">
+                  <a class="dropdown-item" href="construction.html">Consulter les offres</a>
+                  <a class="dropdown-item" href="construction.html">Candidature Spontanée</a>
+                </div>
+              </li>
+              <!-- link Evenements -->
+              <li class="nav-item">
+                <a class="nav-link mr-3" href="construction.html">Evènements</a>
+              </li>
+              <!-- Dropdown Avis-->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-3" data-toggle="dropdown">
+                  Votre Avis
+                </a>
+                <div class="dropdown-menu cost-drop">
+                  <a class="dropdown-item" href="construction.html">Le blog</a>
+                  <a class="dropdown-item" href="construction.html">Vos témoignages</a>
+                </div>
+              </li>
+              <!-- Dropdown Avis-->
+              <li class="nav-item">
+                <a class="nav-link mr-5" href="construction.html">Contacts</a>
+              </li>
+            </ul>
+            <!-- BOUTON DE CONNECTION DANS LE MENU EN RESPONSIVE -->
+            <button href="{{ path('app_login') }}"
+              class="btn btn-info ml-2 mb-2 justify-content-start connexion_button d-block d-sm-block d-md-block d-lg-none d-xl-none">Se
+              Connecter
+            </button>
+
+          </div>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- END HEADER -->
+
+  <!-- LIENS CALL TO ACTION -->
+  <section class="row">
+    <div class="col-lg-6 text-center text-cust-call-to-action-1 px-0">
+      <h2>Inscrivez-vous à nos formations thématiques </h2>
+    </div>
+    <div class="col-lg-6 text-center text-cust-call-to-action-2 px-0">
+      <h2> L'agence recrute ! </h2>
+    </div>
+  </section>
+  <!-- END LIENS CALL TO ACTION -->
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+         <!-- jquery-3.4.1.min.js en Local -->
+        <script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
+        <!-- bootstrap.bundle.min.js en Local -->
+        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- bootstrap.min.js en Local -->
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    </body>
+</html>

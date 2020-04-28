@@ -1,0 +1,35 @@
+easy_admin:
+    entities:
+        Article:
+            class: App\Entity\Article
+            form:
+                fields:
+                    - {property: 'Titre', label: 'Nom Article'}
+                    - {property: 'SousTitre'}
+                    - {property: 'Slug'}
+                    - {property: 'contenu', label: 'Contenu', type: 'fos_ckeditor'}
+                    - {property: 'createdAt'}
+                    - {property: 'updatedAt'}
+                    - {property: 'imageFile', type: 'file', base_path: '%app.path.featured_image%'}
+            list:
+                actions: 
+                    - {name: 'show', label: '', icon: 'eye', title: 'voir'}
+                    - {name: 'delete', label: '', icon: 'trash-alt', title: 'supprimer'}
+                    - {name: 'edit', label: '', icon: 'edit', title: 'modifier'}
+                    - {name: 'new', label: 'Ajouter', icon: 'plus', title: 'Ajouter'}
+
+                help: 'This message is for an article that you want to see'
+                fields:
+                    - {property: 'titre', label: 'Nom'}
+                    - {property: 'featured_image', type: 'image', base_path: '%app.path.featured_image%', label: 'Photo'}
+                    - {property: 'createdAt', label: 'Date de création'}
+                    
+
+            show:
+                fields:
+                     - {property: 'id', label: 'Identifiant'}
+                     - {property: 'Titre', label: 'Nom Article'}
+                     - {property: 'SousTitre'}
+                     - {property: 'Slug'}
+                     - {property: 'contenu'}
+                     - {property: 'featured_image', type: 'image', base_path: '%app.path.featured_image%'}

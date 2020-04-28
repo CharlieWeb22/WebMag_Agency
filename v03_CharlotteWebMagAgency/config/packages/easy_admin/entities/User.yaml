@@ -1,0 +1,24 @@
+easy_admin:
+    entities:
+        User:
+            class: App\Entity\User
+            list:
+                actions: 
+                    - {name: 'show', label: '', icon: 'eye', title: 'voir'}
+                    - {name: '-delete'}
+                    - {name: 'edit', label: '', icon: 'edit', title: 'modifier'}
+                    - {name: '-new'}
+
+                fields:
+                    - { property: 'email' }
+                    - { property: 'roles' }
+            form:
+                fields:
+                    - { property: 'email' }
+                    -   property: 'roles'
+                        type: 'choice'
+                        type_options:
+                            mapped: true
+                            expanded: true
+                            multiple: true
+                            choices: { 'User': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' }

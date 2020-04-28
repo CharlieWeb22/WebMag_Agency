@@ -1,0 +1,7 @@
+easy_admin:
+    design:
+        menu:
+            - label : 'Utilisateurs'
+              children : ['User']
+            - label : 'Blog'
+              children: ['Article']

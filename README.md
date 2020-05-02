@@ -27,3 +27,10 @@ php bin/console doctrine:database:create
 ```
 
 ## Importer la base de données SQL
+Pour importer les données de la base, suivait les instructions suivantes :
+1. Ouvrez phpMyAdmin.
+2. Cliquez sur le nom de la base de données qui recevra les informations importées. La page se rafraîchira pour afficher les informations relatives à la base de données sélectionnée.
+3. Cliquez sur l’onglet « Importer ».
+4. Cliquez sur le bouton « Afficher » de la section « Fichier à importer » (File to import).
+5. Votre navigateur vous invitera à repérer sur votre ordinateur le fichier de la base de données.
+6. Une fois le fichier repéré et sélectionné, le champ « Emplacement du fichier texte » (Location of the text file) affichera le chemin du fichier de la base de données. Cliquez sur le bouton « Exécuter ».

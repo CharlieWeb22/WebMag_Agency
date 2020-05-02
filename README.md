@@ -19,5 +19,11 @@ Pour récupérer les informations de la base de données, il faut commencer par 
 ```
 DATABASE_URL=mysql://root@127.0.0.1:3306/WebMag-Agency?serverVersion=5.7
 ```
+Si ce nom de base de donnée existe déjà pour vous, vous pouvez le changer
+Puis entrer la commande suivante pour lancer la création de la base de données :
+
+```
+php bin/console doctrine:database:create
+```
 
 ## Importer la base de données SQL

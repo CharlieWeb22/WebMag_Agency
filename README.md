@@ -9,9 +9,9 @@ Dézipper ensuite le fichier et installer le sur votre ordinateur.
 
 Ouvrez ensuite le projet dans un editeur de texte et ouvrez un nouveau terminal.
 vérifier bien que vous soyez sur votre projet puis lancer la première commande :
-'''
+```
 composer install
-'''
+```
 
 Cela permettra d'installer les fichiers vendors nécessaire au projet.
 Pour récupérer les informations de l abase de données il faut commencer par créer une base de données qui est normalement déjà définis dans le fichier .env de votre arborescence Symfony.

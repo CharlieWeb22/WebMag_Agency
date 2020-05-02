@@ -34,3 +34,5 @@ Pour importer les données de la base, suivait les instructions suivantes :
 4. Cliquez sur le bouton « Afficher » de la section « Fichier à importer » (File to import). 
 5. Votre navigateur vous invitera à repérer sur votre ordinateur le fichier de la base de données. Ici il s'agit du fichier .sql présent dans le dossier ZIP que vous avez télécharger.
 6. Une fois le fichier repéré et sélectionné, le champ « Emplacement du fichier texte » (Location of the text file) affichera le chemin du fichier de la base de données. Cliquez sur le bouton « Exécuter ».
+
+Vous pouvez désormais lancer le serveur et voir les données sur vos pages.
